@@ -1,20 +1,31 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+//normal react component
+//const jsxheading = <h1  className="head" tabIndex="1">namaste React🚀🚀🚀</h1>
 
-const head = React.createElement("div",{id : "parent"},[
-    React.createElement("div",{id:"parent"},[
-        React.createElement("h1",{id:"child"},"Hello World"),
-        React.createElement("h2",{id:"child"},"Hello Welocme to react"),
-        React.createElement("h3",{id:"child"},"Welcome to javascript react")
-    ]),
-    React.createElement("div",{id : "parent"},
-        React.createElement("div",{id:"parent"},[
-            React.createElement("h1",{id:"child"},"Hello World"),
-            React.createElement("h2",{id:"child"},"Hello Welocme to react"),
-            React.createElement("h3",{id:"child"},"Welcome to javascript react")
-        ])
-    
-)]);
+//react element
+// const title =(
+//     <h1 className="head">namaste react🚀🚀🚀🚀</h1>
+// );
 
+const Title= function() {
+    return(
+        <h1>namaste react🚀🚀🚀</h1>
+        );
+};
 
+const number=10000;
 
+//react functional component
+const HeadingComponent = () => (
+    <div id="conatiner">
+        <h1 className="head">welcome to react</h1>
+        {number}
+        <Title/>
+        <Title></Title>
+        {Title()}
+        <h1>{console.log(number)}</h1>
+    </div>
+);
 const heads = ReactDOM.createRoot(document.getElementById("root"));
-heads.render(head);
+heads.render(<HeadingComponent/>);
